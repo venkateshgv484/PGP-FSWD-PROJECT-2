@@ -5,7 +5,7 @@
 <head>
     <title>Learner's Academy</title>
 </head>
-<body>
+<body style="background-color:#80e5ff;">
     <center>
         <h1>Learner's Academy Students</h1>
 		<h2>
@@ -26,13 +26,15 @@
             <caption></caption>
             <tr>
                 <th>ID</th>
+                <th>Roll No.</th>
                 <th>Student Name</th>
-                <th>Email</th>
-                <th>Class</th>
+                <th>Email Id</th>
+                <th>Class Name</th>
             </tr>
             <c:forEach var="academyStudent" items="${academyStudentList}">
                 <tr>
                     <td><c:out value="${academyStudent.id}" /></td>
+                    <td><c:out value="${academyStudent.rollNo}" /></td>
                     <td><c:out value="${academyStudent.studentName}" /></td>
                     <td><c:out value="${academyStudent.email}" /></td>
                     <td><c:out value="${classMap.get(academyStudent.classId)}" /></td>
@@ -45,5 +47,6 @@
             </c:forEach>
         </table>
     </div>   
+	<div style= "text-align: center; color: red;">${errors}</div>
 </body>
 </html>

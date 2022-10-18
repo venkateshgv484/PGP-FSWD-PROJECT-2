@@ -5,7 +5,7 @@
 <head>
     <title>Learner's Academy</title>
 </head>
-<body>
+<body style="background-color:#80e5ff;">
     <center>
         <h1>Learner's Academy Subjects</h1>
 		<h2>

@@ -5,7 +5,7 @@
 <head>
     <title>Learner's Academy</title>
 </head>
-<body>
+<body style="background-color:#80e5ff;">
     <div align="center">
         <h1>Learner's Academy - Subject, Teacher Assignment to Class</h1>
 		<h2>
@@ -43,22 +43,23 @@
             <caption></caption>
             <tr>
                 <th>ID</th>
-                <th>Subject</th>
-                <th>Teacher</th>
+                <th>Subject Name</th>
+                <th>Teacher Name</th>
             </tr>
-            <c:forEach var="entity" items="${list}">
+            <c:forEach var="academyClassSubjectTeacher" items="${academyClassSubjectTeacherList}">
                 <tr>
-                    <td><c:out value="${entity.id}" /></td>
-                    <td><c:out value="${subjectMap.get(entity.subjectId)}" /></td>
-                    <td><c:out value="${teacherMap.get(entity.teacherId)}" /></td>
+                    <td><c:out value="${academyClassSubjectTeacher.id}" /></td>
+                    <td><c:out value="${subjectMap.get(academyClassSubjectTeacher.subjectId)}" /></td>
+                    <td><c:out value="${teacherMap.get(academyClassSubjectTeacher.teacherId)}" /></td>
                     <td>
-                        <a href="<%=request.getContextPath()%>/home/classes/assignment/edit?id=<c:out value='${entity.id}' />&classId=<c:out value='${academyClass.id}' />">Edit</a>
+                        <a href="<%=request.getContextPath()%>/home/classes/assignment/edit?id=<c:out value='${academyClassSubjectTeacher.id}' />&classId=<c:out value='${academyClass.id}' />">Edit</a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="<%=request.getContextPath()%>/home/classes/assignment/delete?id=<c:out value='${entity.id}' />&classId=<c:out value='${academyClass.id}' />">Delete</a>
+                        <a href="<%=request.getContextPath()%>/home/classes/assignment/delete?id=<c:out value='${academyClassSubjectTeacher.id}' />&classId=<c:out value='${academyClass.id}' />">Delete</a>
                     </td>
                 </tr>
             </c:forEach>
         </table>
     </div>   
+	<div style= "text-align: center; color: red;">${errors}</div>
 </body>
 </html>

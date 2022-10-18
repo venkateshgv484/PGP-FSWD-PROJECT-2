@@ -5,7 +5,7 @@
 <head>
     <title>Learner's Academy</title>
 </head>
-<body>
+<body style="background-color:#80e5ff;">
     <center>
         <h1>Learner's Academy Classes</h1>
 		<h2>
@@ -40,40 +40,40 @@
         </h2>
     </center>
     <div align="center">
-        <c:if test="${entity != null}">
-            <form action="update" method="post">
+        <c:if test="${!isNew}">
+            <form action="<%=request.getContextPath()%>/home/classes/assignment/update" method="post">
         </c:if>
-        <c:if test="${entity == null}">
-            <form action="insert" method="post">
+        <c:if test="${isNew}">
+            <form action="<%=request.getContextPath()%>/home/classes/assignment/insert" method="post">
         </c:if>
         <input type="hidden" name="classId" value="<c:out value='${academyClass.id}' />" />
         <h2>
-            <c:if test="${entity != null}">
+            <c:if test="${!isNew}">
                 Edit Subject and Teacher
             </c:if>
-            <c:if test="${entity == null}">
+            <c:if test="${isNew}">
                 Add New Subject and Teacher
             </c:if>
         </h2>
         <table border="1" cellpadding="5">
             <caption>
             </caption>
-            <c:if test="${entity != null}">
-                <input type="hidden" name="id" value="<c:out value='${entity.id}' />" />
+            <c:if test="${!isNew}">
+                <input type="hidden" name="id" value="<c:out value='${academyClassSubjectTeacher.id}' />" />
             </c:if>
             <tr>
-                <th>Subject Title: </th>
+                <th>Select Subject: </th>
 				<td>
 					<select name="subjectId" required="true">
 						<c:forEach var="vSubject" items="${subjectMap}">
-					        <c:if test="${entity == null}">
+					        <c:if test="${academyClassSubjectTeacher == null}">
 								<option value="${vSubject.key}">${vSubject.value}</option>
 					        </c:if>
-					        <c:if test="${entity != null}">
-					        	<c:if test="${entity.subjectId != vSubject.key}">
+					        <c:if test="${academyClassSubjectTeacher != null}">
+					        	<c:if test="${academyClassSubjectTeacher.subjectId != vSubject.key}">
 									<option value="${vSubject.key}">${vSubject.value}</option>
 					        	</c:if>
-					        	<c:if test="${entity.subjectId == vSubject.key}">
+					        	<c:if test="${academyClassSubjectTeacher.subjectId == vSubject.key}">
 									<option value="${vSubject.key}" selected="true">${vSubject.value}</option>
 					        	</c:if>
 					        </c:if>
@@ -82,18 +82,18 @@
 				</td>
 			</tr>
             <tr>
-                <th>Teacher Title: </th>
+                <th>Select Teacher: </th>
 				<td>
 					<select name="teacherId" required="true">
 						<c:forEach var="vTeacher" items="${teacherMap}">
-					        <c:if test="${entity == null}">
+					        <c:if test="${academyClassSubjectTeacher == null}">
 								<option value="${vTeacher.key}">${vTeacher.value}</option>
 					        </c:if>
-					        <c:if test="${entity != null}">
-					        	<c:if test="${entity.teacherId != vTeacher.key}">
+					        <c:if test="${academyClassSubjectTeacher != null}">
+					        	<c:if test="${academyClassSubjectTeacher.teacherId != vTeacher.key}">
 									<option value="${vTeacher.key}">${vTeacher.value}</option>
 					        	</c:if>
-					        	<c:if test="${entity.teacherId == vTeacher.key}">
+					        	<c:if test="${academyClassSubjectTeacher.teacherId == vTeacher.key}">
 									<option value="${vTeacher.key}"  selected="true">${vTeacher.value}</option>
 					        	</c:if>
 					        </c:if>
@@ -109,5 +109,6 @@
         </table>
         </form>
     </div>   
+	<div style= "text-align: center; color: red;">${errors}</div>
 </body>
 </html>

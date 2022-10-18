@@ -9,7 +9,6 @@ com\academy\classsubjectteacher\servlet\AcademyClassSubjectTeacherAddServlet.cla
 com\academy\subject\dao\AcademySubjectDAO.class
 com\academy\classsubjectteacher\servlet\AcademyClassSubjectTeacherUpdateServlet.class
 com\academy\home\servlet\HomeServlet.class
-com\academy\utils\HibernateUtil.class
 com\academy\classes\dao\AcademyClassDAO.class
 com\academy\classsubjectteacher\servlet\AcademyClassSubjectTeacherEditServlet.class
 com\academy\student\servlet\AcademyStudenEditServlet.class
@@ -32,16 +31,17 @@ com\academy\subject\servlet\AcademySubjectDeleteServlet.class
 com\academy\teacher\servlet\AcademyTeacherListServlet.class
 com\academy\subject\servlet\AcademySubjectListServlet.class
 com\academy\teacher\servlet\AcademyTeacherInsertServlet.class
+com\academy\utils\DataUtils.class
 com\academy\classes\servlet\AcademyClassAddServlet.class
 com\academy\classsubjectteacher\servlet\AcademyClassSubjectTeacherDeleteServlet.class
 com\academy\classsubjectteacher\servlet\AcademyClassSubjectTeacherListServlet.class
 com\academy\student\servlet\AcademyStudentAddServlet.class
 com\academy\student\servlet\AcademyStudentInsertServlet.class
+com\academy\utils\HibernateUtils.class
 com\academy\classes\servlet\AcademyClassDeleteServlet.class
 com\academy\student\dto\AcademyStudent.class
 com\academy\teacher\servlet\AcademyTeacherUpdateServlet.class
 com\academy\classsubjectteacher\dao\AcademyClassSubjectTeacherDAO.class
 com\academy\subject\servlet\AcademySubjectAddServlet.class
 com\academy\student\servlet\AcademyStudentUpdateServlet.class
-com\academy\utils\HibernateUtilBkp.class
 com\academy\classsubjectteacher\dto\AcademyClassSubjectTeacher.class

@@ -5,7 +5,7 @@
 <head>
 <title>Learner's Academy</title>
 </head>
-<body>
+<body style="background-color:#80e5ff;">
 	<center>
 		<h1>Learner's Academy</h1>
 		<h2>
@@ -24,13 +24,13 @@
 		</h2>
 	</center>
     <div align="center">
-        <form action="home/report" method="post">
+        <form action="<%=request.getContextPath()%>/home/report" method="post">
         <h2>Class Report</h2>
         <table border="1" cellpadding="5">
             <caption>
             </caption>
             <tr>
-                <th>Class : </th>
+                <th>Select Class Name: </th>
 				<td>
 					<select name="classId" required="true">
 						<c:forEach var="vClass" items="${classMap}">
@@ -47,5 +47,6 @@
         </table>
         </form>
     </div>
+	<div style= "text-align: center; color: red;">${errors}</div>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <head>
     <title>Learner's Academy</title>
 </head>
-<body>
+<body style="background-color:#80e5ff;">
     <center>
         <h1>Learner's Academy Teachers</h1>
 		<h2>
@@ -22,10 +22,10 @@
     </center>
     <div align="center">
         <c:if test="${!isNew}">
-            <form action="update" method="post">
+            <form action="<%=request.getContextPath()%>/home/teachers/update" method="post">
         </c:if>
         <c:if test="${isNew}">
-            <form action="insert" method="post">
+            <form action="<%=request.getContextPath()%>/home/teachers/insert" method="post">
         </c:if>
         <table border="1" cellpadding="5">
             <caption>

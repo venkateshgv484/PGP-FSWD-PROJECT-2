@@ -5,7 +5,7 @@
 <head>
 <title>Learner's Academy</title>
 </head>
-<body>
+<body style="background-color:#80e5ff;">
 	<center>
 		<h1>Learner's Academy Class Report</h1>
 		<h2>
@@ -21,10 +21,12 @@
 				</caption>
 				<tr>
 					<th>ID</th>
-					<th>Class Tittle</th>
+					<th>Class Code</th>
+					<th>Class Name</th>
 				</tr>
 				<tr>
 					<td><c:out value="${academyClass.id}" /></td>
+					<td><c:out value="${academyClass.classCode}" /></td>
 					<td><c:out value="${academyClass.className}" /></td>
 				</tr>
 			</table>
@@ -61,12 +63,14 @@
 				</caption>
 				<tr>
 					<th>ID</th>
+					<th>Roll No</th>
 					<th>Student Name</th>
-					<th>Email</th>
+					<th>Email ID</th>
 				</tr>
 				<c:forEach var="academyStudent" items="${classStudents}">
 					<tr>
 						<td><c:out value="${academyStudent.id}" /></td>
+						<td><c:out value="${academyStudent.rollNo}" /></td>
 						<td><c:out value="${academyStudent.studentName}" /></td>
 						<td><c:out value="${academyStudent.email}" /></td>
 					</tr>
